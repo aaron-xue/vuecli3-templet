@@ -19,7 +19,7 @@ export default new Router({
         {
             path: '/page3',
             name: 'page3',
-            component: page1,
+            component: page3,
             meta: {             //用于main.js中页面动态添加title
                 title: '神州邦邦'
             }
@@ -27,7 +27,7 @@ export default new Router({
         {
             path: '/page4',
             name: 'page4',
-            component: page2,
+            component: page4,
             meta: {             //用于main.js中页面动态添加title
                 title: '神州邦邦'
             }
