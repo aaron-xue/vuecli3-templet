@@ -1,29 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view class="router"/>
+    <!-- <transition :name="name">
+      <router-view class="router"/>
+    </transition> -->
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+
+export default {
+  name: "app",
+  data() {
+    return {
+      name: "left-fade"
+    };
+  },
+  watch: {
+    //给路由添加动画
+    // $route: function() {
+    //   if (!this.$router.isBack) {
+    //     this.name = "left-fade";
+    //     this.$router.isBack = true;
+    //   } else {
+    //     this.name = "right-fade";
+    //   }
+    // }
   }
+};
+</script>
+
+<style scoped>
+.left-fade-leave-to {
+  transform: translateX(-100%);
+}
+.left-fade-enter {
+  transform: translateX(100%);
+}
+.right-fade-leave-to {
+  transform: translateX(100%);
+}
+.right-fade-enter {
+  transform: translateX(-100%);
 }
 </style>
