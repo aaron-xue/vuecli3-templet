@@ -14,8 +14,12 @@ Vue.use(Router)
 export default new Router({
     mode: 'hash',
     base: '/', // 基础路径
-    redirect: '/page1',
     routes: [
+        {
+            path: '/',
+            name: 'index',
+            redirect: '/page1'
+        },
         {
             path: '/page1',
             name: 'page1',

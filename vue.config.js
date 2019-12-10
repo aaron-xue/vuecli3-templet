@@ -1,5 +1,4 @@
 let glob = require('glob')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 //配置pages多页面获取当前文件夹下的html和js
 function getEntry(globPath) {
@@ -24,7 +23,7 @@ if (process.argv.length) {
         const element = process.argv[i];
         htmls = {
             ...htmls,
-            ...getEntry('/' + process.argv[i])
+            ...getEntry('/' + element)
         }
     }
 } else {
