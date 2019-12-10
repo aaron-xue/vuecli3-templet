@@ -10,7 +10,7 @@
 <script>
 
 export default {
-  name: "app",
+  name: "page1",
   data() {
     return {
       name: "left-fade"

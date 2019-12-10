@@ -1,8 +1,8 @@
 let basePath = '/'
 
-switch (process.env.NODE_ENV) {
+switch (process.env.VUE_APP_TITLE) {
     //测试
-    case 'development':
+    case 'alpha':
         // basePath = 'https://stage.shenzhoubb.com/'
         basePath = 'https://api.stage.shenzhoubb.com/'
         break;
@@ -12,6 +12,7 @@ switch (process.env.NODE_ENV) {
         break;
 
     default:
+        basePath = 'https://api.stage.shenzhoubb.com/'
         break;
 }
 

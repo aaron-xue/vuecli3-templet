@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open",
+    "serve": "vue-cli-service serve",
     "start": "npm run serve",
-    "build": "vue-cli-service build",
-    "test": "vue-cli-service build --mode development"
+    "build": "vue-cli-service build --mode build",
+    "alpha": "vue-cli-service build --mode alpha"
   },
   "dependencies": {
     "core-js": "^2.6.5",
