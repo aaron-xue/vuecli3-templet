@@ -31,7 +31,6 @@ if (process.argv.length) {
     htmls = getEntry('')
 }
 
-
 module.exports = {
     productionSourceMap: false,     //打包去掉sourceMap
     publicPath: process.env.NODE_ENV === 'production'
@@ -48,5 +47,42 @@ module.exports = {
         },
         open: true,
         index: 'page1.html'
+    },
+    chainWebpack: (config) => {
+        let imgPath = './'
+        switch (process.env.VUE_APP_TITLE) {
+            //测试
+            case 'alpha':
+                imgPath = 'https://stage.shenzhoubb.com/images/app'
+                break;
+            //生产
+            case 'production':
+                imgPath = 'https://static.shenzhoubb.com/images/app'
+                break;
+
+            default:
+                imgPath = './img'
+                break;
+        }
+        let urlLoaderOpt = {
+            publicPath: imgPath,
+            limit: 10,
+            name(file) {
+                file = file.replace(/\\/g,'/')
+                let reg = new RegExp('images/' + '(.*)')
+                return file.match(reg)[1]
+            }
+        }
+        if (process.env.NODE_ENV === 'development') {
+            urlLoaderOpt.outputPath = 'img'
+        }
+        config
+            .module
+            .rule("images")
+            .test(/\.(jpg|png|gif)$/)
+            .use("url-loader")
+            .loader("url-loader")
+            .options(urlLoaderOpt)
+            .end();
     }
 }

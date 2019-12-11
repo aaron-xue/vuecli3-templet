@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 <div class=''>
-    aaa111111
+    <img src="@/assets/images/originalMA/h3c_banner1.png" alt="" class="photo_img">
 </div>
 </template>
 
