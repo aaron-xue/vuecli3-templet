@@ -13,15 +13,15 @@ Vue.use(Router)
 
 export default new Router({
     mode: 'hash',
-    base: '/', // 基础路径
+    base: '/page2', // 基础路径
     routes: [
         {
             path: '/',
             name: 'index',
-            redirect: '/page3'
+            redirect: '/page3.html'
         },
         {
-            path: '/page3',
+            path: '/page3.html',
             name: 'page3',
             component: page3,
             meta: {             //用于main.js中页面动态添加title
@@ -29,7 +29,7 @@ export default new Router({
             }
         },
         {
-            path: '/page4',
+            path: '/page4.html',
             name: 'page4',
             component: page4,
             meta: {             //用于main.js中页面动态添加title

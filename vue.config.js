@@ -40,6 +40,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/': {
+                historyApiFallback: true,
                 target: 'https://api.stage.shenzhoubb.com',
                 ws: false,
                 changeOrigin: true

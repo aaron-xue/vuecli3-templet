@@ -18,10 +18,10 @@ export default new Router({
         {
             path: '/',
             name: 'index',
-            redirect: '/page1'
+            redirect: '/page1.html'
         },
         {
-            path: '/page1',
+            path: '/page1.html',
             name: 'page1',
             component: page1,
             meta: {             //用于main.js中页面动态添加title
@@ -29,7 +29,7 @@ export default new Router({
             }
         },
         {
-            path: '/page2',
+            path: '/page2.html',
             name: 'page2',
             component: page2,
             meta: {             //用于main.js中页面动态添加title
