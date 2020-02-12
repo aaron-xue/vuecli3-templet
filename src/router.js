@@ -11,7 +11,8 @@ Router.prototype.push = function (location, onComplete, onAbort) {
 Vue.use(Router)
 
 export default new Router({
-    mode: 'hash',
+    fallback: false,
+    mode: 'history',
     base: '/', // 基础路径
     routes: [
         {
